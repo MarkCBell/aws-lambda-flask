@@ -63,6 +63,7 @@ locals {
 resource "null_resource" "build" {
   triggers = {
     folder = sha256(join("", [for f in fileset(var.source_dir, "**"): filesha256("${var.source_dir}/${f}")]))
+    rebuild = fileexists("${local.path}.zip")
   }
 
   provisioner "local-exec" {

@@ -7,6 +7,7 @@ locals {
 resource "null_resource" "build" {
   triggers = {
     run = filebase64sha256(var.requirements_file)
+    rebuild = fileexists("${local.path}.zip")
   }
 
   provisioner "local-exec" {
