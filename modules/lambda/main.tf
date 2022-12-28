@@ -57,7 +57,7 @@ module "requirements_layer" {
 }
 
 locals {
-  path = "/tmp/${random_uuid.id.result}/"
+  path = "/tmp/${random_uuid.id.result}"
 }
 
 resource "null_resource" "build" {
