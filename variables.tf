@@ -22,7 +22,7 @@ variable "stage" {
 variable "python_version" {
   description = "The version of Python to run under, must be available locally for building the lambda layer"
   type        = string
-  default     = "python3.8"
+  default     = "python3.12"
 }
 
 variable "app_name" {
